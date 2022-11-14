@@ -5,25 +5,25 @@ import (
 )
 
 type Stack struct {
-	top    int
-	length int
-	data   []int
+	top  int
+	n    int
+	data []int
 }
 
 func Create(n int) *Stack {
 	return &Stack{
-		top:    0,
-		length: n,
-		data:   make([]int, n+1),
+		top:  -1,
+		n:    n,
+		data: make([]int, n+1),
 	}
 }
 
 func (s *Stack) Empty() bool {
-	return s.top == 0
+	return s.top == -1
 }
 
 func (s *Stack) Push(x int) {
-	if s.top > s.length-1 {
+	if s.top+1 > s.n-1 {
 		panic(errors.New("overflow"))
 	}
 

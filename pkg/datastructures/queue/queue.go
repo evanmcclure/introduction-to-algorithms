@@ -5,44 +5,46 @@ import (
 )
 
 type Queue struct {
-	length int
-	head   int
-	tail   int
-	data   []int
+	n    int
+	head int
+	tail int
+	data []int
 }
 
 func Create(n int) *Queue {
 	return &Queue{
-		length: n,
-		head:   1,
-		tail:   1,
-		data:   make([]int, n+1),
+		n:    n,
+		head: 0,
+		tail: 0,
+		data: make([]int, n),
 	}
 }
 
 func (q *Queue) Enqueue(x int) {
-	fmt.Printf("Enqueue(x=%d, head=%d, tail=%d, length=%d)\n", x, q.head, q.tail, q.length)
+	fmt.Printf("Enter Enqueue(x=%d, head=%d, tail=%d, n=%d, data=%v)\n", x, q.head, q.tail, q.n, q.data)
 
 	q.data[q.tail] = x
 
-	if q.tail == q.length {
-		q.tail = 1
+	if q.tail == q.n-1 {
+		q.tail = 0
 	} else {
 		q.tail = q.tail + 1
 	}
 
-	fmt.Printf("Enqueue: head=%d, tail=%d, length=%d, data=%v\n", q.head, q.tail, q.length, q.data)
+	fmt.Printf("Leave Enqueue(head=%d, tail=%d, n=%d, data=%v)\n", q.head, q.tail, q.n, q.data)
 }
 
 func (q *Queue) Dequeue() int {
+	fmt.Printf("Enter Dequeue(head=%d, tail=%d, n=%d, data=%v)\n", q.head, q.tail, q.n, q.data)
+
 	x := q.data[q.head]
 
-	if q.head == q.length {
-		q.head = 1
+	if q.head == q.n-1 {
+		q.head = 0
 	} else {
 		q.head = q.head + 1
 	}
 
-	fmt.Printf("Dequeue: head=%d, tail=%d, length=%d, data=%v\n", q.head, q.tail, q.length, q.data)
+	fmt.Printf("Leave Dequeue(head=%d, tail=%d, n=%d, data=%v) -> %d\n", q.head, q.tail, q.n, q.data, x)
 	return x
 }

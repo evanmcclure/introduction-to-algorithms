@@ -1,3 +1,2 @@
-# interview-prep
-A collection of algorithms and data structures that I coded in order to prepare for a technical interview
-
+# Introduction to Algorithms
+My solutions to problems in the book Introduction to Algorithms

@@ -12,8 +12,6 @@ FetchContent_Declare(
 
 FetchContent_MakeAvailable(googletest)
 
-# add_library(IntroductionToAlgorithms sorting/insertion_sort.cc)
-
 ################################
 # Testing
 ################################
@@ -21,15 +19,17 @@ FetchContent_MakeAvailable(googletest)
 enable_testing()
 
 add_executable(
-    insertion_sort_test
+    all_code
+    searching/linear_search.cc
+    searching/linear_search_test.cc
     sorting/insertion_sort.cc
     sorting/insertion_sort_test.cc
 )
 
 target_link_libraries(
-    insertion_sort_test
+    all_code
     GTest::gtest_main
 )
 
 include(GoogleTest)
-gtest_discover_tests(insertion_sort_test)
+gtest_discover_tests(all_code)

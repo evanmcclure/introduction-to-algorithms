@@ -1,5 +1,6 @@
 #
-# C.gitignore <https://github.com/github/gitignore/blob/main/C.gitignore>
+# C.gitignore
+# <https://github.com/github/gitignore/blob/main/C.gitignore>
 #
 
 # Prerequisites
@@ -56,9 +57,27 @@ Mkfile.old
 dkms.conf
 
 #
+# CMake.gitignore
+# <https://github.com/github/gitignore/blob/main/CMake.gitignore>
+#
+CMakeLists.txt.user
+CMakeCache.txt
+CMakeFiles
+CMakeScripts
+Testing
+Makefile
+cmake_install.cmake
+install_manifest.txt
+compile_commands.json
+CTestTestfile.cmake
+_deps
+
+#
 # Local
 #
 
 # Dependency directories (remove the comment below to include it)
 # vendor/
 .vscode/
+build/
+

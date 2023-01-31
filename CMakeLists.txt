@@ -20,6 +20,8 @@ enable_testing()
 
 add_executable(
     all_code
+    maths/add_binary_integers.cc
+    maths/add_binary_integers_test.cc
     searching/linear_search.cc
     searching/linear_search_test.cc
     sorting/insertion_sort.cc

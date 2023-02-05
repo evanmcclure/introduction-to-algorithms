@@ -26,6 +26,8 @@ add_executable(
     searching/linear_search_test.cc
     sorting/insertion_sort.cc
     sorting/insertion_sort_test.cc
+    sorting/selection_sort.cc
+    sorting/selection_sort_test.cc
 )
 
 target_link_libraries(
